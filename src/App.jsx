@@ -5,10 +5,9 @@ import { Ticket } from './components/Ticket';
 function App() {
   return (
 
-    <>
-    <h1>hello my world</h1>
+    <div className = 'App'>
     <Ticket/>
-    </>
+    </div>
   );
 }
 
