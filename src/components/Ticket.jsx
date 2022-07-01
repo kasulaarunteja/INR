@@ -37,11 +37,17 @@ export const Ticket = () => {
     num.length < 5 ? setNum([...num, data]) : alert("Ticket Limit Reached")
   }
 
+  const handleDelete = (id) => {
+    const DataDelete = num.filter((e) => e.id !== id)
+    setNum(DataDelete)
+  }
+
 
 
   return (
     <div className='container'>
       <div className='box'>
+        <div className='box1'>
         <div>{data}</div>
         <div>enter 6 digits</div>
 
@@ -64,17 +70,19 @@ export const Ticket = () => {
         <div>
           <button onClick={() => { addData() }} id='addticket' >  Add Ticket</button>
         </div>
+        </div>
+        
         <div className='right'>
           <img onClick={randomTicket} src="/image/wheel.png" alt="" height="100%" width="100%" />
         </div>
 
       </div>
       <p className='title'>Your selected Tickets :</p>
-      <div className='inputbox'>
+      <div className='box3'>
         {num.map((e) => {
           return (
-            <div  >
-              <div className='mapdata'>{e}</div>
+            <div>
+              <div className='elements'>{e}</div>
             </div>
           )
         })}
